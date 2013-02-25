@@ -16,14 +16,21 @@
 		02A9055016DB544400D5D2E8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A9054F16DB544400D5D2E8 /* Default.png */; };
 		02A9055216DB544400D5D2E8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A9055116DB544400D5D2E8 /* Default@2x.png */; };
 		02A9055416DB544400D5D2E8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A9055316DB544400D5D2E8 /* Default-568h@2x.png */; };
-		02A9055716DB544400D5D2E8 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9055616DB544400D5D2E8 /* FirstViewController.m */; };
+		02A9055716DB544400D5D2E8 /* XpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9055616DB544400D5D2E8 /* XpenseViewController.m */; };
 		02A9055916DB544400D5D2E8 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A9055816DB544400D5D2E8 /* first.png */; };
 		02A9055B16DB544400D5D2E8 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A9055A16DB544400D5D2E8 /* first@2x.png */; };
-		02A9055E16DB544400D5D2E8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9055D16DB544400D5D2E8 /* SecondViewController.m */; };
+		02A9055E16DB544400D5D2E8 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9055D16DB544400D5D2E8 /* ReportViewController.m */; };
 		02A9056016DB544400D5D2E8 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A9055F16DB544400D5D2E8 /* second.png */; };
 		02A9056216DB544400D5D2E8 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02A9056116DB544400D5D2E8 /* second@2x.png */; };
-		02A9056516DB544400D5D2E8 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9056316DB544400D5D2E8 /* FirstViewController.xib */; };
-		02A9056816DB544400D5D2E8 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9056616DB544400D5D2E8 /* SecondViewController.xib */; };
+		02A9056516DB544400D5D2E8 /* XpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9056316DB544400D5D2E8 /* XpenseViewController.xib */; };
+		02A9056816DB544400D5D2E8 /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9056616DB544400D5D2E8 /* ReportViewController.xib */; };
+		02A9057216DB560600D5D2E8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9057016DB560600D5D2E8 /* SettingsViewController.m */; };
+		02A9057316DB560600D5D2E8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9057116DB560600D5D2E8 /* SettingsViewController.xib */; };
+		02A9057A16DB62C600D5D2E8 /* xpense.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02A9057816DB62C600D5D2E8 /* xpense.xcdatamodeld */; };
+		02A9057D16DB669500D5D2E8 /* XpenseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9057C16DB669500D5D2E8 /* XpenseCategory.m */; };
+		02A9058016DB66AC00D5D2E8 /* XpenseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9057F16DB66AC00D5D2E8 /* XpenseItem.m */; };
+		02A9058216DB68E000D5D2E8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A9058116DB68E000D5D2E8 /* CoreData.framework */; };
+		02A9058516DB68FE00D5D2E8 /* DbStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9058416DB68FE00D5D2E8 /* DbStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,16 +47,27 @@
 		02A9054F16DB544400D5D2E8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		02A9055116DB544400D5D2E8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		02A9055316DB544400D5D2E8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		02A9055516DB544400D5D2E8 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		02A9055616DB544400D5D2E8 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		02A9055516DB544400D5D2E8 /* XpenseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XpenseViewController.h; sourceTree = "<group>"; };
+		02A9055616DB544400D5D2E8 /* XpenseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XpenseViewController.m; sourceTree = "<group>"; };
 		02A9055816DB544400D5D2E8 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		02A9055A16DB544400D5D2E8 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		02A9055C16DB544400D5D2E8 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		02A9055D16DB544400D5D2E8 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		02A9055C16DB544400D5D2E8 /* ReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		02A9055D16DB544400D5D2E8 /* ReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		02A9055F16DB544400D5D2E8 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		02A9056116DB544400D5D2E8 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		02A9056416DB544400D5D2E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
-		02A9056716DB544400D5D2E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+		02A9056416DB544400D5D2E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/XpenseViewController.xib; sourceTree = "<group>"; };
+		02A9056716DB544400D5D2E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ReportViewController.xib; sourceTree = "<group>"; };
+		02A9056F16DB560600D5D2E8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		02A9057016DB560600D5D2E8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		02A9057116DB560600D5D2E8 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		02A9057916DB62C600D5D2E8 /* xpense.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xpense.xcdatamodel; sourceTree = "<group>"; };
+		02A9057B16DB669500D5D2E8 /* XpenseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpenseCategory.h; sourceTree = "<group>"; };
+		02A9057C16DB669500D5D2E8 /* XpenseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpenseCategory.m; sourceTree = "<group>"; };
+		02A9057E16DB66AC00D5D2E8 /* XpenseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpenseItem.h; sourceTree = "<group>"; };
+		02A9057F16DB66AC00D5D2E8 /* XpenseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpenseItem.m; sourceTree = "<group>"; };
+		02A9058116DB68E000D5D2E8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		02A9058316DB68FE00D5D2E8 /* DbStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbStore.h; sourceTree = "<group>"; };
+		02A9058416DB68FE00D5D2E8 /* DbStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A9058216DB68E000D5D2E8 /* CoreData.framework in Frameworks */,
 				02A9053E16DB544300D5D2E8 /* UIKit.framework in Frameworks */,
 				02A9054016DB544300D5D2E8 /* Foundation.framework in Frameworks */,
 				02A9054216DB544300D5D2E8 /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +88,7 @@
 		02A9053116DB544300D5D2E8 = {
 			isa = PBXGroup;
 			children = (
+				02A9058116DB68E000D5D2E8 /* CoreData.framework */,
 				02A9054316DB544400D5D2E8 /* Xpense */,
 				02A9053C16DB544300D5D2E8 /* Frameworks */,
 				02A9053B16DB544300D5D2E8 /* Products */,
@@ -96,18 +116,13 @@
 		02A9054316DB544400D5D2E8 /* Xpense */ = {
 			isa = PBXGroup;
 			children = (
+				02A9057716DB5BEB00D5D2E8 /* Settings */,
+				02A9057616DB5BE200D5D2E8 /* Report */,
+				02A9057516DB5BD600D5D2E8 /* Xpense */,
+				02A9057416DB5B4D00D5D2E8 /* Database */,
 				02A9054C16DB544400D5D2E8 /* AppDelegate.h */,
 				02A9054D16DB544400D5D2E8 /* AppDelegate.m */,
-				02A9055516DB544400D5D2E8 /* FirstViewController.h */,
-				02A9055616DB544400D5D2E8 /* FirstViewController.m */,
-				02A9055816DB544400D5D2E8 /* first.png */,
-				02A9055A16DB544400D5D2E8 /* first@2x.png */,
-				02A9055C16DB544400D5D2E8 /* SecondViewController.h */,
-				02A9055D16DB544400D5D2E8 /* SecondViewController.m */,
-				02A9055F16DB544400D5D2E8 /* second.png */,
-				02A9056116DB544400D5D2E8 /* second@2x.png */,
-				02A9056316DB544400D5D2E8 /* FirstViewController.xib */,
-				02A9056616DB544400D5D2E8 /* SecondViewController.xib */,
+				02A9056E16DB55BB00D5D2E8 /* Resouces */,
 				02A9054416DB544400D5D2E8 /* Supporting Files */,
 			);
 			path = Xpense;
@@ -125,6 +140,61 @@
 				02A9055316DB544400D5D2E8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02A9056E16DB55BB00D5D2E8 /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				02A9055F16DB544400D5D2E8 /* second.png */,
+				02A9056116DB544400D5D2E8 /* second@2x.png */,
+				02A9055816DB544400D5D2E8 /* first.png */,
+				02A9055A16DB544400D5D2E8 /* first@2x.png */,
+			);
+			name = Resouces;
+			sourceTree = "<group>";
+		};
+		02A9057416DB5B4D00D5D2E8 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				02A9057816DB62C600D5D2E8 /* xpense.xcdatamodeld */,
+				02A9057E16DB66AC00D5D2E8 /* XpenseItem.h */,
+				02A9057F16DB66AC00D5D2E8 /* XpenseItem.m */,
+				02A9057B16DB669500D5D2E8 /* XpenseCategory.h */,
+				02A9057C16DB669500D5D2E8 /* XpenseCategory.m */,
+				02A9058316DB68FE00D5D2E8 /* DbStore.h */,
+				02A9058416DB68FE00D5D2E8 /* DbStore.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		02A9057516DB5BD600D5D2E8 /* Xpense */ = {
+			isa = PBXGroup;
+			children = (
+				02A9055516DB544400D5D2E8 /* XpenseViewController.h */,
+				02A9055616DB544400D5D2E8 /* XpenseViewController.m */,
+				02A9056316DB544400D5D2E8 /* XpenseViewController.xib */,
+			);
+			name = Xpense;
+			sourceTree = "<group>";
+		};
+		02A9057616DB5BE200D5D2E8 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				02A9055C16DB544400D5D2E8 /* ReportViewController.h */,
+				02A9055D16DB544400D5D2E8 /* ReportViewController.m */,
+				02A9056616DB544400D5D2E8 /* ReportViewController.xib */,
+			);
+			name = Report;
+			sourceTree = "<group>";
+		};
+		02A9057716DB5BEB00D5D2E8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				02A9056F16DB560600D5D2E8 /* SettingsViewController.h */,
+				02A9057016DB560600D5D2E8 /* SettingsViewController.m */,
+				02A9057116DB560600D5D2E8 /* SettingsViewController.xib */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +256,9 @@
 				02A9055B16DB544400D5D2E8 /* first@2x.png in Resources */,
 				02A9056016DB544400D5D2E8 /* second.png in Resources */,
 				02A9056216DB544400D5D2E8 /* second@2x.png in Resources */,
-				02A9056516DB544400D5D2E8 /* FirstViewController.xib in Resources */,
-				02A9056816DB544400D5D2E8 /* SecondViewController.xib in Resources */,
+				02A9056516DB544400D5D2E8 /* XpenseViewController.xib in Resources */,
+				02A9056816DB544400D5D2E8 /* ReportViewController.xib in Resources */,
+				02A9057316DB560600D5D2E8 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +271,13 @@
 			files = (
 				02A9054A16DB544400D5D2E8 /* main.m in Sources */,
 				02A9054E16DB544400D5D2E8 /* AppDelegate.m in Sources */,
-				02A9055716DB544400D5D2E8 /* FirstViewController.m in Sources */,
-				02A9055E16DB544400D5D2E8 /* SecondViewController.m in Sources */,
+				02A9055716DB544400D5D2E8 /* XpenseViewController.m in Sources */,
+				02A9055E16DB544400D5D2E8 /* ReportViewController.m in Sources */,
+				02A9057216DB560600D5D2E8 /* SettingsViewController.m in Sources */,
+				02A9057A16DB62C600D5D2E8 /* xpense.xcdatamodeld in Sources */,
+				02A9057D16DB669500D5D2E8 /* XpenseCategory.m in Sources */,
+				02A9058016DB66AC00D5D2E8 /* XpenseItem.m in Sources */,
+				02A9058516DB68FE00D5D2E8 /* DbStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,20 +292,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		02A9056316DB544400D5D2E8 /* FirstViewController.xib */ = {
+		02A9056316DB544400D5D2E8 /* XpenseViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				02A9056416DB544400D5D2E8 /* en */,
 			);
-			name = FirstViewController.xib;
+			name = XpenseViewController.xib;
 			sourceTree = "<group>";
 		};
-		02A9056616DB544400D5D2E8 /* SecondViewController.xib */ = {
+		02A9056616DB544400D5D2E8 /* ReportViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				02A9056716DB544400D5D2E8 /* en */,
 			);
-			name = SecondViewController.xib;
+			name = ReportViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -332,6 +408,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02A9057816DB62C600D5D2E8 /* xpense.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02A9057916DB62C600D5D2E8 /* xpense.xcdatamodel */,
+			);
+			currentVersion = 02A9057916DB62C600D5D2E8 /* xpense.xcdatamodel */;
+			path = xpense.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 02A9053216DB544300D5D2E8 /* Project object */;
 }

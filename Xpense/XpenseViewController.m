@@ -6,19 +6,19 @@
 //  Copyright (c) 2013 Home. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "XpenseViewController.h"
 
-@interface FirstViewController ()
+@interface XpenseViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation XpenseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"First", @"First");
+        self.title = @"Xpense";
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
@@ -36,4 +36,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [_xpenseListTableView release];
+    [_xpenseListSegmentedControl release];
+    [super dealloc];
+}
 @end

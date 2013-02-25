@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SettingsViewController.h
 //  Xpense
 //
 //  Created by Vincent Nguyen on 25/2/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface SettingsViewController : UIViewController
 
 @end

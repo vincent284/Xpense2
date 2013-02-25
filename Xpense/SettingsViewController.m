@@ -1,33 +1,33 @@
 //
-//  SecondViewController.m
+//  SettingsViewController.m
 //  Xpense
 //
 //  Created by Vincent Nguyen on 25/2/13.
 //  Copyright (c) 2013 Home. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SettingsViewController.h"
 
-@interface SecondViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation SettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Second", @"Second");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        self.title = @"Settings";
+        self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
 }
-							
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
