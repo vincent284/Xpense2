@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface DbStore : NSObject
+@interface DbStore : NSObject 
 
++ (DbStore *)mainThreadStore;
+
++ (DbStore *)currentThreadStore;
+
+@property (nonatomic, retain, readonly) NSManagedObjectContext *moc;
+
+- (BOOL) save;
 @end
