@@ -7,6 +7,7 @@
 //
 
 #import "XpenseViewController.h"
+#import "XpenseDetailsViewController.h"
 
 @interface XpenseViewController ()
 
@@ -40,5 +41,9 @@
     [_xpenseListTableView release];
     [_xpenseListSegmentedControl release];
     [super dealloc];
+}
+- (IBAction)addXpenseBtnPressed:(id)sender {
+    XpenseDetailsViewController *xpenseDetailsVC = [[[XpenseDetailsViewController alloc] initWithNewXpense:YES] autorelease];
+    [[self navigationController] pushViewController:xpenseDetailsVC animated:YES];
 }
 @end

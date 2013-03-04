@@ -13,4 +13,6 @@
 @property (retain, nonatomic) IBOutlet UITableView *xpenseListTableView;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *xpenseListSegmentedControl;
 
+- (IBAction)addXpenseBtnPressed:(id)sender;
+
 @end

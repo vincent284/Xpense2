@@ -31,6 +31,10 @@
 		02A9058016DB66AC00D5D2E8 /* XpenseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9057F16DB66AC00D5D2E8 /* XpenseItem.m */; };
 		02A9058216DB68E000D5D2E8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A9058116DB68E000D5D2E8 /* CoreData.framework */; };
 		02A9058516DB68FE00D5D2E8 /* DbStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9058416DB68FE00D5D2E8 /* DbStore.m */; };
+		02A9A67816E4769A00E06FB5 /* XpenseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9A67616E4769A00E06FB5 /* XpenseDetailsViewController.m */; };
+		02A9A67916E4769A00E06FB5 /* XpenseDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9A67716E4769A00E06FB5 /* XpenseDetailsViewController.xib */; };
+		02A9A68216E488AB00E06FB5 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9A68016E488AB00E06FB5 /* CategoryViewController.m */; };
+		02A9A68316E488AB00E06FB5 /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9A68116E488AB00E06FB5 /* CategoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,12 @@
 		02A9058116DB68E000D5D2E8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		02A9058316DB68FE00D5D2E8 /* DbStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbStore.h; sourceTree = "<group>"; };
 		02A9058416DB68FE00D5D2E8 /* DbStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbStore.m; sourceTree = "<group>"; };
+		02A9A67516E4769A00E06FB5 /* XpenseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpenseDetailsViewController.h; sourceTree = "<group>"; };
+		02A9A67616E4769A00E06FB5 /* XpenseDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpenseDetailsViewController.m; sourceTree = "<group>"; };
+		02A9A67716E4769A00E06FB5 /* XpenseDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XpenseDetailsViewController.xib; sourceTree = "<group>"; };
+		02A9A67F16E488AB00E06FB5 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		02A9A68016E488AB00E06FB5 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		02A9A68116E488AB00E06FB5 /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +183,12 @@
 				02A9055516DB544400D5D2E8 /* XpenseViewController.h */,
 				02A9055616DB544400D5D2E8 /* XpenseViewController.m */,
 				02A9056316DB544400D5D2E8 /* XpenseViewController.xib */,
+				02A9A67516E4769A00E06FB5 /* XpenseDetailsViewController.h */,
+				02A9A67616E4769A00E06FB5 /* XpenseDetailsViewController.m */,
+				02A9A67716E4769A00E06FB5 /* XpenseDetailsViewController.xib */,
+				02A9A67F16E488AB00E06FB5 /* CategoryViewController.h */,
+				02A9A68016E488AB00E06FB5 /* CategoryViewController.m */,
+				02A9A68116E488AB00E06FB5 /* CategoryViewController.xib */,
 			);
 			name = Xpense;
 			sourceTree = "<group>";
@@ -259,6 +275,8 @@
 				02A9056516DB544400D5D2E8 /* XpenseViewController.xib in Resources */,
 				02A9056816DB544400D5D2E8 /* ReportViewController.xib in Resources */,
 				02A9057316DB560600D5D2E8 /* SettingsViewController.xib in Resources */,
+				02A9A67916E4769A00E06FB5 /* XpenseDetailsViewController.xib in Resources */,
+				02A9A68316E488AB00E06FB5 /* CategoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +296,8 @@
 				02A9057D16DB669500D5D2E8 /* XpenseCategory.m in Sources */,
 				02A9058016DB66AC00D5D2E8 /* XpenseItem.m in Sources */,
 				02A9058516DB68FE00D5D2E8 /* DbStore.m in Sources */,
+				02A9A67816E4769A00E06FB5 /* XpenseDetailsViewController.m in Sources */,
+				02A9A68216E488AB00E06FB5 /* CategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,10 +388,12 @@
 		02A9056C16DB544400D5D2E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vincent Nguyen (7L26YX4VKJ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Xpense/Xpense-Prefix.pch";
 				INFOPLIST_FILE = "Xpense/Xpense-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1F1BC9D9-967F-4548-963D-27E30FC30A93";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -379,10 +401,12 @@
 		02A9056D16DB544400D5D2E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vincent Nguyen (7L26YX4VKJ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Xpense/Xpense-Prefix.pch";
 				INFOPLIST_FILE = "Xpense/Xpense-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1F1BC9D9-967F-4548-963D-27E30FC30A93";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -406,6 +430,7 @@
 				02A9056D16DB544400D5D2E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

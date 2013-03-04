@@ -27,8 +27,14 @@
     UIViewController *xpenseVC = [[[XpenseViewController alloc] initWithNibName:@"XpenseViewController" bundle:nil] autorelease];
     UIViewController *reportVC = [[[ReportViewController alloc] initWithNibName:@"ReportViewController" bundle:nil] autorelease];
     UIViewController *settingsVC = [[[SettingsViewController alloc] initWithNibName:NSStringFromClass([SettingsViewController class]) bundle:nil] autorelease];
+    
+    UINavigationController *xpenseNavController = [[[UINavigationController alloc] initWithRootViewController:xpenseVC] autorelease];
+    UINavigationController *reportNavController = [[[UINavigationController alloc] initWithRootViewController:reportVC] autorelease];
+    UINavigationController *settingsNavController = [[[UINavigationController alloc] initWithRootViewController:settingsVC] autorelease];
+    
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = @[xpenseVC, reportVC, settingsVC];
+//    self.tabBarController.viewControllers = @[xpenseVC, reportVC, settingsVC];
+    self.tabBarController.viewControllers = @[xpenseNavController, reportNavController, settingsNavController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
