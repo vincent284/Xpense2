@@ -1,19 +1,19 @@
 //
-//  XpenseDetailsViewController.m
+//  CategoryDetailsViewController.m
 //  Xpense
 //
-//  Created by Vincent Nguyen on 4/3/13.
+//  Created by Vincent Nguyen on 5/3/13.
 //  Copyright (c) 2013 Home. All rights reserved.
 //
 
-#import "XpenseDetailsViewController.h"
-#import "CategoryViewController.h"
+#import "CategoryDetailsViewController.h"
+#import "CategoryManager.h"
 
-@interface XpenseDetailsViewController ()
+@interface CategoryDetailsViewController ()
 
 @end
 
-@implementation XpenseDetailsViewController
+@implementation CategoryDetailsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,25 +24,24 @@
     return self;
 }
 
-- (id)initWithNewXpense:(BOOL)isNew {
-    self = [self initWithNibName:NSStringFromClass([XpenseDetailsViewController class]) bundle:nil];
+- (id)initWithNewCategory:(BOOL)isNew {
+    self = [self initWithNibName:NSStringFromClass([CategoryDetailsViewController class]) bundle:nil];
     if (self) {
         if (isNew) {
-            self.title = @"Add Xpense";
+            self.title = @"Add Category";
         } else {
-            self.title = @"Edit Xpense";
+            self.title = @"Edit Category";
         }
     }
     
     return self;
 }
 
-- (IBAction)categoryBtnPressed:(id)sender {
-    CategoryViewController *categoryVC = [[[CategoryViewController alloc] initWithNibName:NSStringFromClass([CategoryViewController class]) bundle:nil] autorelease];
-    [[self navigationController] pushViewController:categoryVC animated:YES];
-}
-
 - (IBAction)saveBtnPressed:(id)sender {
+    if (![self.categoryNameTextField.text isEqual: @""]) {
+        [[CategoryManager sharedInstance] createCategoryWithName:self.categoryNameTextField.text];
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -59,6 +58,7 @@
 }
 
 - (void)dealloc {
+    [_categoryNameTextField release];
     [super dealloc];
 }
 @end

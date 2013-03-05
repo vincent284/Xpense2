@@ -12,5 +12,6 @@
 
 - (id)initWithNewXpense:(BOOL)isNew;
 - (IBAction)categoryBtnPressed:(id)sender;
+- (IBAction)saveBtnPressed:(id)sender;
 
 @end

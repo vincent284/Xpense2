@@ -7,6 +7,9 @@
 //
 
 #import "CategoryViewController.h"
+#import "CategoryDetailsViewController.h"
+#import "CategoryManager.h"
+#import "XpenseCategory.h"
 
 @interface CategoryViewController ()
 
@@ -18,7 +21,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Category";
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -54,21 +57,43 @@
     if (section == 0) {
         return 1;
     } else {
-        return 0;
+        return [[[CategoryManager sharedInstance] fetchAllCategories] count];
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"Operations";
+    } else {
+        return @"Categories";
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    if (indexPath.section == 0) {
+        static NSString *OperationCellIdentifier = @"AddCategory";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OperationCellIdentifier];
+        if (!cell) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:OperationCellIdentifier] autorelease];
+        }
+        
+        cell.textLabel.text = @"Add Category";
+        
+        return cell;
+    } else {
+        static NSString *CellIdentifier = @"Cell";
+        NSArray *categories = [[CategoryManager sharedInstance] fetchAllCategories];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            XpenseCategory *category = (XpenseCategory *) [categories objectAtIndex:indexPath.row];
+            cell.textLabel.text = category.name;
+        }
+        
+        return cell;
     }
     
-    // Configure the cell...
-    
-    return cell;
 }
 
 /*
@@ -114,14 +139,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    if (indexPath.section == 0) {
+        CategoryDetailsViewController *categoryDetailsVC = [[[CategoryDetailsViewController alloc] initWithNewCategory:YES] autorelease];
+        [[self navigationController] pushViewController:categoryDetailsVC animated:YES];
+    } else if (indexPath.section == 1) {
+        
+    }
 }
 
 @end

@@ -148,6 +148,106 @@ static dispatch_queue_t serialQueue;
     });
 }
 
+#pragma mark
+#pragma mark Database methods
+- (NSArray *) fetchEntitiesForName:(NSString *)name
+                         predicate:(NSPredicate *)predicate
+                   sortDescriptors:(NSArray *)sortDescriptors {
+    
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:name
+											  inManagedObjectContext:self.moc];
+	[request setEntity:entity];
+    [request setPredicate:predicate];
+	[request setSortDescriptors:sortDescriptors];
+    
+	NSError *error = nil;
+	NSArray *entities = [self.moc executeFetchRequest:request error:&error];
+    if(error) {
+        NSLog(@"Error fetching entities");
+        return nil;
+    }
+    
+	return entities;
+}
+
+- (NSArray *) fetchEntitiesForName:(NSString *)name
+                         predicate:(NSPredicate *)predicate
+                   sortDescriptors:(NSArray *)sortDescriptors
+               prefetchingKeyPaths:(NSArray *)keypaths {
+    
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:name
+											  inManagedObjectContext:self.moc];
+	[request setEntity:entity];
+    [request setPredicate:predicate];
+	[request setSortDescriptors:sortDescriptors];
+    [request setRelationshipKeyPathsForPrefetching:keypaths];
+    
+	NSError *error = nil;
+	NSArray *entities = [self.moc executeFetchRequest:request error:&error];
+    if(error) {
+        NSLog(@"Error fetching entities");
+        return nil;
+    }
+    
+	return entities;
+}
+
+- (NSManagedObject *)fetchFirstEntityForName:(NSString *)name
+                                   predicate:(NSPredicate *)predicate
+                             sortDescriptors:(NSArray *)sortDescriptors {
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    NSEntityDescription *entityDes = [NSEntityDescription entityForName:name inManagedObjectContext:self.moc];
+    
+    [request setEntity:entityDes];
+    [request setPredicate:predicate];
+    [request setSortDescriptors:sortDescriptors];
+    [request setFetchLimit:1];
+    
+    NSError *error = nil;
+    NSArray *entities = [self.moc executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"Error fetching first entities");
+        return nil;
+    }
+    
+    if (entities.count > 0)
+        return [entities objectAtIndex:0];
+    else
+        return nil;
+}
+
+// Count the number of entities
+- (NSUInteger)countEntityForName:(NSString*)name
+                       predicate:(NSPredicate *)predicate
+                 sortDescriptors:(NSArray *)sortDescriptors {
+    
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:name
+											  inManagedObjectContext:self.moc];
+	[request setEntity:entity];
+    [request setPredicate:predicate];
+    [request setSortDescriptors:sortDescriptors];
+    
+	NSError *error = nil;
+	NSUInteger count = [self.moc countForFetchRequest:request error:&error];
+    if(error) {
+        NSLog(@"Error counting fetched entities");
+    }
+    
+    return count;
+}
+
+- (NSManagedObject *)createEntityForName:(NSString*)name {
+    return [NSEntityDescription insertNewObjectForEntityForName:name
+										 inManagedObjectContext:self.moc];
+}
+
+- (void)deleteEntity:(NSManagedObject*)entity {
+    [entity.managedObjectContext deleteObject:entity];
+}
+
 - (BOOL)save {
     assert(self.moc);
     

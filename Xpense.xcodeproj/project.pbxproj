@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0235676716E5D88D0065931A /* CategoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0235676516E5D88D0065931A /* CategoryDetailsViewController.m */; };
+		0235676816E5D88D0065931A /* CategoryDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0235676616E5D88D0065931A /* CategoryDetailsViewController.xib */; };
+		0235676B16E5E70B0065931A /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0235676A16E5E70B0065931A /* CategoryManager.m */; };
 		02A9053E16DB544300D5D2E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A9053D16DB544300D5D2E8 /* UIKit.framework */; };
 		02A9054016DB544300D5D2E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A9053F16DB544300D5D2E8 /* Foundation.framework */; };
 		02A9054216DB544300D5D2E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A9054116DB544300D5D2E8 /* CoreGraphics.framework */; };
@@ -38,6 +41,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0235676416E5D88D0065931A /* CategoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDetailsViewController.h; sourceTree = "<group>"; };
+		0235676516E5D88D0065931A /* CategoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDetailsViewController.m; sourceTree = "<group>"; };
+		0235676616E5D88D0065931A /* CategoryDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryDetailsViewController.xib; sourceTree = "<group>"; };
+		0235676916E5E70B0065931A /* CategoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryManager.h; sourceTree = "<group>"; };
+		0235676A16E5E70B0065931A /* CategoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
 		02A9053A16DB544300D5D2E8 /* Xpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A9053D16DB544300D5D2E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		02A9053F16DB544300D5D2E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +103,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0235676316E5D8620065931A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				02A9A67F16E488AB00E06FB5 /* CategoryViewController.h */,
+				02A9A68016E488AB00E06FB5 /* CategoryViewController.m */,
+				02A9A68116E488AB00E06FB5 /* CategoryViewController.xib */,
+				0235676416E5D88D0065931A /* CategoryDetailsViewController.h */,
+				0235676516E5D88D0065931A /* CategoryDetailsViewController.m */,
+				0235676616E5D88D0065931A /* CategoryDetailsViewController.xib */,
+				0235676916E5E70B0065931A /* CategoryManager.h */,
+				0235676A16E5E70B0065931A /* CategoryManager.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		02A9053116DB544300D5D2E8 = {
 			isa = PBXGroup;
 			children = (
@@ -180,15 +203,13 @@
 		02A9057516DB5BD600D5D2E8 /* Xpense */ = {
 			isa = PBXGroup;
 			children = (
+				0235676316E5D8620065931A /* Category */,
 				02A9055516DB544400D5D2E8 /* XpenseViewController.h */,
 				02A9055616DB544400D5D2E8 /* XpenseViewController.m */,
 				02A9056316DB544400D5D2E8 /* XpenseViewController.xib */,
 				02A9A67516E4769A00E06FB5 /* XpenseDetailsViewController.h */,
 				02A9A67616E4769A00E06FB5 /* XpenseDetailsViewController.m */,
 				02A9A67716E4769A00E06FB5 /* XpenseDetailsViewController.xib */,
-				02A9A67F16E488AB00E06FB5 /* CategoryViewController.h */,
-				02A9A68016E488AB00E06FB5 /* CategoryViewController.m */,
-				02A9A68116E488AB00E06FB5 /* CategoryViewController.xib */,
 			);
 			name = Xpense;
 			sourceTree = "<group>";
@@ -277,6 +298,7 @@
 				02A9057316DB560600D5D2E8 /* SettingsViewController.xib in Resources */,
 				02A9A67916E4769A00E06FB5 /* XpenseDetailsViewController.xib in Resources */,
 				02A9A68316E488AB00E06FB5 /* CategoryViewController.xib in Resources */,
+				0235676816E5D88D0065931A /* CategoryDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +320,8 @@
 				02A9058516DB68FE00D5D2E8 /* DbStore.m in Sources */,
 				02A9A67816E4769A00E06FB5 /* XpenseDetailsViewController.m in Sources */,
 				02A9A68216E488AB00E06FB5 /* CategoryViewController.m in Sources */,
+				0235676716E5D88D0065931A /* CategoryDetailsViewController.m in Sources */,
+				0235676B16E5E70B0065931A /* CategoryManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
