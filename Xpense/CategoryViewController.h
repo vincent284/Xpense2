@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryViewController : UITableViewController
+@protocol CategoryViewControllerDelegate;
 
+@interface CategoryViewController : UITableViewController
+@property (nonatomic, assign) id <CategoryViewControllerDelegate> delegate;
+
+- (id)initWithCategoryName:(NSString *)categoryName;
+
+@end
+
+@protocol CategoryViewControllerDelegate <NSObject>
+- (void)categoryViewController:(CategoryViewController *)controller didFinishChoosingCategory:(NSString *)categoryName;
 @end

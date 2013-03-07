@@ -11,7 +11,9 @@
 #import "CategoryManager.h"
 #import "XpenseCategory.h"
 
-@interface CategoryViewController ()
+@interface CategoryViewController () {
+    NSString *_selectedCategoryName;
+}
 
 @end
 
@@ -25,6 +27,15 @@
     return self;
 }
 
+- (id)initWithCategoryName:(NSString *)categoryName {
+    self = [[CategoryViewController alloc] initWithNibName:NSStringFromClass([CategoryViewController class]) bundle:nil];
+    if (self) {
+        _selectedCategoryName = categoryName;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,6 +46,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,6 +105,9 @@
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
             XpenseCategory *category = (XpenseCategory *) [categories objectAtIndex:indexPath.row];
             cell.textLabel.text = category.name;
+            if ([category.name isEqualToString:_selectedCategoryName]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
         }
         
         return cell;
@@ -143,7 +162,12 @@
         CategoryDetailsViewController *categoryDetailsVC = [[[CategoryDetailsViewController alloc] initWithNewCategory:YES] autorelease];
         [[self navigationController] pushViewController:categoryDetailsVC animated:YES];
     } else if (indexPath.section == 1) {
-        
+        if ([self.delegate respondsToSelector:@selector(categoryViewController:didFinishChoosingCategory:)]) {
+            NSArray *categories = [[CategoryManager sharedInstance] fetchAllCategories];
+            XpenseCategory *category = (XpenseCategory *)[categories objectAtIndex:indexPath.row];
+            [self.delegate categoryViewController:self didFinishChoosingCategory:category.name];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

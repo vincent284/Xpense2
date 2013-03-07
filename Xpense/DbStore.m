@@ -8,7 +8,7 @@
 
 #import "DbStore.h"
 
-#define DATABASE_NAME @"appdb"
+#define DATABASE_NAME @"xpense"
 
 @interface DbStore() {
     
@@ -34,6 +34,7 @@ static dispatch_queue_t serialQueue;
     mocs = [[NSMutableDictionary alloc] init];
     mocThreads = [[NSMutableDictionary alloc] init];
     counter = 0;
+    serialQueue = dispatch_queue_create("HoiioPhone.DBStore.SerialQueue", 0);
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(mergeChanges:)
@@ -274,7 +275,7 @@ static NSPersistentStoreCoordinator *persistentStoreCoordinator = nil;
 + (NSManagedObjectModel *)managedObjectModel {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"Xpense" ofType:@"momd"];
+        NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"xpense" ofType:@"momd"];
         NSURL *modelURL = [NSURL fileURLWithPath:modelPath];
         managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     });
@@ -303,7 +304,7 @@ static NSPersistentStoreCoordinator *persistentStoreCoordinator = nil;
         
         NSError *error = nil;
         persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-        if ([persistentStoreCoordinator
+        if (![persistentStoreCoordinator
              addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error]) {
             NSLog(@"Error creating persistentStoreCoordinator: %@, %@", error, [error userInfo]);
         }

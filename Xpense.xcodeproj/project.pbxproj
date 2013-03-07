@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0215FEF116E838A0003F36A4 /* XpenseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0215FEEF16E838A0003F36A4 /* XpenseDetailsViewController.m */; };
+		0215FEF216E838A0003F36A4 /* XpenseDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0215FEF016E838A0003F36A4 /* XpenseDetailsViewController.xib */; };
+		0215FEF816E847D5003F36A4 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0215FEF716E847D5003F36A4 /* TextFieldCell.xib */; };
+		0215FEFB16E859D2003F36A4 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0215FEFA16E859D2003F36A4 /* TextFieldCell.m */; };
 		0235676716E5D88D0065931A /* CategoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0235676516E5D88D0065931A /* CategoryDetailsViewController.m */; };
 		0235676816E5D88D0065931A /* CategoryDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0235676616E5D88D0065931A /* CategoryDetailsViewController.xib */; };
 		0235676B16E5E70B0065931A /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0235676A16E5E70B0065931A /* CategoryManager.m */; };
@@ -34,13 +38,22 @@
 		02A9058016DB66AC00D5D2E8 /* XpenseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9057F16DB66AC00D5D2E8 /* XpenseItem.m */; };
 		02A9058216DB68E000D5D2E8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A9058116DB68E000D5D2E8 /* CoreData.framework */; };
 		02A9058516DB68FE00D5D2E8 /* DbStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9058416DB68FE00D5D2E8 /* DbStore.m */; };
-		02A9A67816E4769A00E06FB5 /* XpenseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9A67616E4769A00E06FB5 /* XpenseDetailsViewController.m */; };
-		02A9A67916E4769A00E06FB5 /* XpenseDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9A67716E4769A00E06FB5 /* XpenseDetailsViewController.xib */; };
 		02A9A68216E488AB00E06FB5 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9A68016E488AB00E06FB5 /* CategoryViewController.m */; };
 		02A9A68316E488AB00E06FB5 /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9A68116E488AB00E06FB5 /* CategoryViewController.xib */; };
+		02CB923416E8617800C48128 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CB923316E8617800C48128 /* LabelCell.xib */; };
+		02CB923716E8620700C48128 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB923616E8620700C48128 /* LabelCell.m */; };
+		02CB923B16E8872A00C48128 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB923916E8872A00C48128 /* DatePickerViewController.m */; };
+		02CB923C16E8872A00C48128 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CB923A16E8872A00C48128 /* DatePickerViewController.xib */; };
+		02CB923F16E89B4B00C48128 /* XpenseItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB923E16E89B4B00C48128 /* XpenseItemManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0215FEEE16E838A0003F36A4 /* XpenseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpenseDetailsViewController.h; sourceTree = "<group>"; };
+		0215FEEF16E838A0003F36A4 /* XpenseDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpenseDetailsViewController.m; sourceTree = "<group>"; };
+		0215FEF016E838A0003F36A4 /* XpenseDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XpenseDetailsViewController.xib; sourceTree = "<group>"; };
+		0215FEF716E847D5003F36A4 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFieldCell.xib; path = TableViewCell/TextFieldCell.xib; sourceTree = "<group>"; };
+		0215FEF916E859D2003F36A4 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldCell.h; path = TableViewCell/TextFieldCell.h; sourceTree = "<group>"; };
+		0215FEFA16E859D2003F36A4 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextFieldCell.m; path = TableViewCell/TextFieldCell.m; sourceTree = "<group>"; };
 		0235676416E5D88D0065931A /* CategoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDetailsViewController.h; sourceTree = "<group>"; };
 		0235676516E5D88D0065931A /* CategoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDetailsViewController.m; sourceTree = "<group>"; };
 		0235676616E5D88D0065931A /* CategoryDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryDetailsViewController.xib; sourceTree = "<group>"; };
@@ -80,12 +93,17 @@
 		02A9058116DB68E000D5D2E8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		02A9058316DB68FE00D5D2E8 /* DbStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbStore.h; sourceTree = "<group>"; };
 		02A9058416DB68FE00D5D2E8 /* DbStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbStore.m; sourceTree = "<group>"; };
-		02A9A67516E4769A00E06FB5 /* XpenseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpenseDetailsViewController.h; sourceTree = "<group>"; };
-		02A9A67616E4769A00E06FB5 /* XpenseDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpenseDetailsViewController.m; sourceTree = "<group>"; };
-		02A9A67716E4769A00E06FB5 /* XpenseDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XpenseDetailsViewController.xib; sourceTree = "<group>"; };
 		02A9A67F16E488AB00E06FB5 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		02A9A68016E488AB00E06FB5 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		02A9A68116E488AB00E06FB5 /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
+		02CB923316E8617800C48128 /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelCell.xib; path = TableViewCell/LabelCell.xib; sourceTree = "<group>"; };
+		02CB923516E8620700C48128 /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelCell.h; path = TableViewCell/LabelCell.h; sourceTree = "<group>"; };
+		02CB923616E8620700C48128 /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelCell.m; path = TableViewCell/LabelCell.m; sourceTree = "<group>"; };
+		02CB923816E8872900C48128 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		02CB923916E8872A00C48128 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
+		02CB923A16E8872A00C48128 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		02CB923D16E89B4B00C48128 /* XpenseItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpenseItemManager.h; sourceTree = "<group>"; };
+		02CB923E16E89B4B00C48128 /* XpenseItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpenseItemManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +121,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0215FEF316E841AE003F36A4 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0215FEF716E847D5003F36A4 /* TextFieldCell.xib */,
+				0215FEF916E859D2003F36A4 /* TextFieldCell.h */,
+				0215FEFA16E859D2003F36A4 /* TextFieldCell.m */,
+				02CB923316E8617800C48128 /* LabelCell.xib */,
+				02CB923516E8620700C48128 /* LabelCell.h */,
+				02CB923616E8620700C48128 /* LabelCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		0235676316E5D8620065931A /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +180,7 @@
 		02A9054316DB544400D5D2E8 /* Xpense */ = {
 			isa = PBXGroup;
 			children = (
+				0215FEF316E841AE003F36A4 /* TableViewCell */,
 				02A9057716DB5BEB00D5D2E8 /* Settings */,
 				02A9057616DB5BE200D5D2E8 /* Report */,
 				02A9057516DB5BD600D5D2E8 /* Xpense */,
@@ -207,9 +239,14 @@
 				02A9055516DB544400D5D2E8 /* XpenseViewController.h */,
 				02A9055616DB544400D5D2E8 /* XpenseViewController.m */,
 				02A9056316DB544400D5D2E8 /* XpenseViewController.xib */,
-				02A9A67516E4769A00E06FB5 /* XpenseDetailsViewController.h */,
-				02A9A67616E4769A00E06FB5 /* XpenseDetailsViewController.m */,
-				02A9A67716E4769A00E06FB5 /* XpenseDetailsViewController.xib */,
+				0215FEEE16E838A0003F36A4 /* XpenseDetailsViewController.h */,
+				0215FEEF16E838A0003F36A4 /* XpenseDetailsViewController.m */,
+				0215FEF016E838A0003F36A4 /* XpenseDetailsViewController.xib */,
+				02CB923816E8872900C48128 /* DatePickerViewController.h */,
+				02CB923916E8872A00C48128 /* DatePickerViewController.m */,
+				02CB923A16E8872A00C48128 /* DatePickerViewController.xib */,
+				02CB923D16E89B4B00C48128 /* XpenseItemManager.h */,
+				02CB923E16E89B4B00C48128 /* XpenseItemManager.m */,
 			);
 			name = Xpense;
 			sourceTree = "<group>";
@@ -296,9 +333,12 @@
 				02A9056516DB544400D5D2E8 /* XpenseViewController.xib in Resources */,
 				02A9056816DB544400D5D2E8 /* ReportViewController.xib in Resources */,
 				02A9057316DB560600D5D2E8 /* SettingsViewController.xib in Resources */,
-				02A9A67916E4769A00E06FB5 /* XpenseDetailsViewController.xib in Resources */,
 				02A9A68316E488AB00E06FB5 /* CategoryViewController.xib in Resources */,
 				0235676816E5D88D0065931A /* CategoryDetailsViewController.xib in Resources */,
+				0215FEF216E838A0003F36A4 /* XpenseDetailsViewController.xib in Resources */,
+				0215FEF816E847D5003F36A4 /* TextFieldCell.xib in Resources */,
+				02CB923416E8617800C48128 /* LabelCell.xib in Resources */,
+				02CB923C16E8872A00C48128 /* DatePickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,10 +358,14 @@
 				02A9057D16DB669500D5D2E8 /* XpenseCategory.m in Sources */,
 				02A9058016DB66AC00D5D2E8 /* XpenseItem.m in Sources */,
 				02A9058516DB68FE00D5D2E8 /* DbStore.m in Sources */,
-				02A9A67816E4769A00E06FB5 /* XpenseDetailsViewController.m in Sources */,
 				02A9A68216E488AB00E06FB5 /* CategoryViewController.m in Sources */,
 				0235676716E5D88D0065931A /* CategoryDetailsViewController.m in Sources */,
 				0235676B16E5E70B0065931A /* CategoryManager.m in Sources */,
+				0215FEF116E838A0003F36A4 /* XpenseDetailsViewController.m in Sources */,
+				0215FEFB16E859D2003F36A4 /* TextFieldCell.m in Sources */,
+				02CB923716E8620700C48128 /* LabelCell.m in Sources */,
+				02CB923B16E8872A00C48128 /* DatePickerViewController.m in Sources */,
+				02CB923F16E89B4B00C48128 /* XpenseItemManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
