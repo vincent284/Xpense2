@@ -77,7 +77,25 @@ static CategoryManager *sharedInstance = nil;
 }
 
 - (void)deleteCategoryWithName:(NSString *)name {
+    DbStore *db = [DbStore currentThreadStore];
+    XpenseCategory *category = nil;
     
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
+    category = (XpenseCategory *)[db fetchFirstEntityForName:NSStringFromClass([XpenseCategory class]) predicate:predicate sortDescriptors:nil];
+    
+    if (!category) {
+        return;
+    } else {
+        [db.moc deleteObject:category];
+        [db save];
+    }
+}
+
+- (void)deleteCategory:(NSManagedObjectID *)objectID {
+    DbStore *db = [DbStore currentThreadStore];
+    XpenseCategory *category = (XpenseCategory *)[db.moc objectWithID:objectID];
+    [db.moc deleteObject:category];
+    [db save];
 }
 
 - (NSArray *)fetchAllCategories {

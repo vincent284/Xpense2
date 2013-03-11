@@ -64,7 +64,7 @@
             _category = [xpenseItem.category.name copy];
             _date = [xpenseItem.date copy];
             
-            _xpenseItemObjectID = xpenseItemObjectID;
+            _xpenseItemObjectID = [xpenseItemObjectID retain];
         }
         
         UIBarButtonItem *saveItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)] autorelease];
@@ -80,6 +80,7 @@
     [_category release];
     [_amountCellIndexPath release];
     [_amount release];
+    [_xpenseItemObjectID release];
     
     [super dealloc];
 }

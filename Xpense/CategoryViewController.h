@@ -10,7 +10,7 @@
 
 @protocol CategoryViewControllerDelegate;
 
-@interface CategoryViewController : UITableViewController
+@interface CategoryViewController : UITableViewController <UIGestureRecognizerDelegate>
 @property (nonatomic, assign) id <CategoryViewControllerDelegate> delegate;
 
 - (id)initWithCategoryName:(NSString *)categoryName;

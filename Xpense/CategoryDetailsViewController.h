@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface CategoryDetailsViewController : UIViewController
 @property (retain, nonatomic) IBOutlet UITextField *categoryNameTextField;
 
-- (id)initWithNewCategory:(BOOL)isNew;
+- (id)initWithCategory:(NSManagedObjectID *)categoryObjectID;
 
 - (IBAction)saveBtnPressed:(id)sender;
 

@@ -15,6 +15,7 @@
 + (CategoryManager *) sharedInstance;
 
 - (NSManagedObjectID *)createCategoryWithName:(NSString *)name;
+- (void)deleteCategory:(NSManagedObjectID *)objectID;
 - (void)deleteCategoryWithName:(NSString *)name;
 - (NSArray *)fetchAllCategories;
 @end

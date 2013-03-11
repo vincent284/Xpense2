@@ -23,6 +23,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
+        [self commonInit];
     }
     return self;
 }
@@ -31,9 +32,18 @@
     self = [[CategoryViewController alloc] initWithNibName:NSStringFromClass([CategoryViewController class]) bundle:nil];
     if (self) {
         _selectedCategoryName = categoryName;
+        [self commonInit];
     }
     
     return self;
+}
+
+- (void)commonInit {
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 1.0;
+    lpgr.delegate = self;
+    [self.tableView addGestureRecognizer:lpgr];
+    [lpgr release];
 }
 
 - (void)viewDidLoad
@@ -44,8 +54,8 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCategory)] autorelease];
+    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,60 +69,48 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addCategory {
+    CategoryDetailsViewController *categoryDetailsVC = [[[CategoryDetailsViewController alloc] initWithCategory:nil] autorelease];
+    [[self navigationController] pushViewController:categoryDetailsVC animated:YES];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (section == 0) {
-        return 1;
-    } else {
-        return [[[CategoryManager sharedInstance] fetchAllCategories] count];
-    }
+    return [[[CategoryManager sharedInstance] fetchAllCategories] count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return @"Operations";
-    } else {
-        return @"Categories";
-    }
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return @"Operations";
+//    } else {
+//        return @"Categories";
+//    }
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        static NSString *OperationCellIdentifier = @"AddCategory";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:OperationCellIdentifier];
-        if (!cell) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:OperationCellIdentifier] autorelease];
+    static NSString *CellIdentifier = @"Cell";
+    NSArray *categories = [[CategoryManager sharedInstance] fetchAllCategories];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        XpenseCategory *category = (XpenseCategory *) [categories objectAtIndex:indexPath.row];
+        cell.textLabel.text = category.name;
+        if ([category.name isEqualToString:_selectedCategoryName]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
-        
-        cell.textLabel.text = @"Add Category";
-        
-        return cell;
-    } else {
-        static NSString *CellIdentifier = @"Cell";
-        NSArray *categories = [[CategoryManager sharedInstance] fetchAllCategories];
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-            XpenseCategory *category = (XpenseCategory *) [categories objectAtIndex:indexPath.row];
-            cell.textLabel.text = category.name;
-            if ([category.name isEqualToString:_selectedCategoryName]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            }
-        }
-        
-        return cell;
     }
     
+    return cell;
 }
 
 /*
@@ -159,15 +157,40 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        CategoryDetailsViewController *categoryDetailsVC = [[[CategoryDetailsViewController alloc] initWithNewCategory:YES] autorelease];
-        [[self navigationController] pushViewController:categoryDetailsVC animated:YES];
-    } else if (indexPath.section == 1) {
         if ([self.delegate respondsToSelector:@selector(categoryViewController:didFinishChoosingCategory:)]) {
             NSArray *categories = [[CategoryManager sharedInstance] fetchAllCategories];
             XpenseCategory *category = (XpenseCategory *)[categories objectAtIndex:indexPath.row];
             [self.delegate categoryViewController:self didFinishChoosingCategory:category.name];
         }
         [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            NSArray *categories = [[CategoryManager sharedInstance] fetchAllCategories];
+            XpenseCategory *category = (XpenseCategory *)[categories objectAtIndex:indexPath.row];
+            [[CategoryManager sharedInstance] deleteCategory:category.objectID];
+            
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
+    }
+}
+
+#pragma mark
+#pragma mark Long press gesture recognizer
+- (void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        CGPoint p = [gestureRecognizer locationInView:self.tableView];
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+        
+        if (indexPath) {
+            NSArray *categories = [[CategoryManager sharedInstance] fetchAllCategories];
+            XpenseCategory *category = (XpenseCategory *)[categories objectAtIndex:indexPath.row];
+            CategoryDetailsViewController *categoryDetailsVC = [[[CategoryDetailsViewController alloc] initWithCategory:category.objectID] autorelease];
+            [[self navigationController] pushViewController:categoryDetailsVC animated:YES];
+        }
     }
 }
 
