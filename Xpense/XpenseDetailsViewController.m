@@ -11,6 +11,12 @@
 #import "LabelCell.h"
 #import "CategoryViewController.h"
 #import "DatePickerViewController.h"
+#import "XpenseItemManager.h"
+#import "Common.h"
+#import "DbStore.h"
+#import "XpenseItem.h"
+#import "XpenseCategory.h"
+#import "Utils.h"
 
 #define AMOUNT_CELL_INDEX 0
 #define CATEGORY_CELL_INDEX 1
@@ -23,6 +29,8 @@
     NSString *_amount;
     NSString *_category;
     NSDate *_date;
+    NSIndexPath *_amountCellIndexPath;
+    NSManagedObjectID *_xpenseItemObjectID;
 }
 
 @end
@@ -38,16 +46,25 @@
     return self;
 }
 
-- (id)initWithNewXpense:(BOOL)isNew {
+- (id)initWithXpense:(NSManagedObjectID *)xpenseItemObjectID {
     self = [self initWithStyle:UITableViewStylePlain];
     if (self) {
-        if (isNew) {
+        if (!xpenseItemObjectID) {
             self.title = @"Add Xpense";
             _amount = @"0";
             _category = @"General";
             _date = [[NSDate date] retain];
+            _amountCellIndexPath = nil;
+            _xpenseItemObjectID = nil;
         } else {
             self.title = @"Edit Xpense";
+            DbStore *db = [DbStore currentThreadStore];
+            XpenseItem *xpenseItem = (XpenseItem *)[db.moc objectWithID:xpenseItemObjectID];
+            _amount = [[Utils xpenseStringFromFloat:[xpenseItem.amount floatValue]] copy];
+            _category = [xpenseItem.category.name copy];
+            _date = [xpenseItem.date copy];
+            
+            _xpenseItemObjectID = xpenseItemObjectID;
         }
         
         UIBarButtonItem *saveItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)] autorelease];
@@ -60,6 +77,9 @@
 
 - (void)dealloc {
     [_date release];
+    [_category release];
+    [_amountCellIndexPath release];
+    [_amount release];
     
     [super dealloc];
 }
@@ -108,7 +128,11 @@
         cell.amountLabel.text = @"Amount";
         cell.amountTextField.keyboardType = UIKeyboardTypeDecimalPad;
         cell.amountTextField.text = _amount;
+        cell.amountTextField.delegate = self;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [_amountCellIndexPath release];
+        _amountCellIndexPath = [indexPath retain];
         
         return cell;
     } else if (indexPath.row == CATEGORY_CELL_INDEX) {
@@ -207,6 +231,30 @@
 #pragma mark
 #pragma mark Bar Buttons
 - (void)save {
+    TextFieldCell *amountCell = (TextFieldCell *) [self.tableView cellForRowAtIndexPath:_amountCellIndexPath];
+    
+    [_amount release];
+    _amount = [amountCell.amountTextField.text copy];
+    
+    BOOL valid = YES;
+    if ([_amount isEqualToString:@""] || !_category) {
+        NSLog(@"Invalid values for XpenseItem");
+        valid = NO;
+    }
+    
+    if (valid) {
+        NSMutableDictionary *data = [[[NSMutableDictionary alloc] init] autorelease];
+        [data setValue:_amount forKey:kAmount];
+        [data setValue:_category forKey:kCategoryName];
+        [data setValue:_date forKey:kDate];
+        
+        if (_xpenseItemObjectID) {
+            [[XpenseItemManager sharedInstance] editAndSaveXpense:_xpenseItemObjectID withData:data];
+        } else {
+            [[XpenseItemManager sharedInstance] createXpenseWithData:data];
+        }
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -224,4 +272,5 @@
     _date = [newDate retain];
     [self.tableView reloadData];
 }
+
 @end

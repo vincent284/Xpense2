@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XpenseViewController : UIViewController
+@interface XpenseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (retain, nonatomic) IBOutlet UITableView *xpenseListTableView;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *xpenseListSegmentedControl;

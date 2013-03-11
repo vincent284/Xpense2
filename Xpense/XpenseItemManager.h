@@ -13,7 +13,8 @@
 
 + (XpenseItemManager *) sharedInstance;
 
-- (NSManagedObjectID *)createXpenseWithDate:(NSDictionary *)data;
+- (NSManagedObjectID *)createXpenseWithData:(NSDictionary *)data;
+- (void)editAndSaveXpense:(NSManagedObjectID *)xpenseItemObjectID withData:(NSDictionary *)data;
 - (NSArray *)fetchAllXpenses;
 
 @end

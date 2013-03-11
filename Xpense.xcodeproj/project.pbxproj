@@ -45,6 +45,10 @@
 		02CB923B16E8872A00C48128 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB923916E8872A00C48128 /* DatePickerViewController.m */; };
 		02CB923C16E8872A00C48128 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CB923A16E8872A00C48128 /* DatePickerViewController.xib */; };
 		02CB923F16E89B4B00C48128 /* XpenseItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB923E16E89B4B00C48128 /* XpenseItemManager.m */; };
+		E146498516EC669F00244400 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = E146498416EC669F00244400 /* Common.m */; };
+		E146498816EC866100244400 /* XpenseItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E146498716EC866100244400 /* XpenseItemCell.m */; };
+		E146498A16EC86AF00244400 /* XpenseItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E146498916EC86AF00244400 /* XpenseItemCell.xib */; };
+		E146498D16ECB07600244400 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E146498C16ECB07600244400 /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,13 @@
 		02CB923A16E8872A00C48128 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
 		02CB923D16E89B4B00C48128 /* XpenseItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpenseItemManager.h; sourceTree = "<group>"; };
 		02CB923E16E89B4B00C48128 /* XpenseItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpenseItemManager.m; sourceTree = "<group>"; };
+		E146498316EC669F00244400 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		E146498416EC669F00244400 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		E146498616EC866100244400 /* XpenseItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XpenseItemCell.h; path = TableViewCell/XpenseItemCell.h; sourceTree = "<group>"; };
+		E146498716EC866100244400 /* XpenseItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XpenseItemCell.m; path = TableViewCell/XpenseItemCell.m; sourceTree = "<group>"; };
+		E146498916EC86AF00244400 /* XpenseItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XpenseItemCell.xib; path = TableViewCell/XpenseItemCell.xib; sourceTree = "<group>"; };
+		E146498B16ECB07600244400 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		E146498C16ECB07600244400 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +141,9 @@
 				02CB923316E8617800C48128 /* LabelCell.xib */,
 				02CB923516E8620700C48128 /* LabelCell.h */,
 				02CB923616E8620700C48128 /* LabelCell.m */,
+				E146498616EC866100244400 /* XpenseItemCell.h */,
+				E146498716EC866100244400 /* XpenseItemCell.m */,
+				E146498916EC86AF00244400 /* XpenseItemCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -187,6 +201,10 @@
 				02A9057416DB5B4D00D5D2E8 /* Database */,
 				02A9054C16DB544400D5D2E8 /* AppDelegate.h */,
 				02A9054D16DB544400D5D2E8 /* AppDelegate.m */,
+				E146498316EC669F00244400 /* Common.h */,
+				E146498416EC669F00244400 /* Common.m */,
+				E146498B16ECB07600244400 /* Utils.h */,
+				E146498C16ECB07600244400 /* Utils.m */,
 				02A9056E16DB55BB00D5D2E8 /* Resouces */,
 				02A9054416DB544400D5D2E8 /* Supporting Files */,
 			);
@@ -339,6 +357,7 @@
 				0215FEF816E847D5003F36A4 /* TextFieldCell.xib in Resources */,
 				02CB923416E8617800C48128 /* LabelCell.xib in Resources */,
 				02CB923C16E8872A00C48128 /* DatePickerViewController.xib in Resources */,
+				E146498A16EC86AF00244400 /* XpenseItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +385,9 @@
 				02CB923716E8620700C48128 /* LabelCell.m in Sources */,
 				02CB923B16E8872A00C48128 /* DatePickerViewController.m in Sources */,
 				02CB923F16E89B4B00C48128 /* XpenseItemManager.m in Sources */,
+				E146498516EC669F00244400 /* Common.m in Sources */,
+				E146498816EC866100244400 /* XpenseItemCell.m in Sources */,
+				E146498D16ECB07600244400 /* Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

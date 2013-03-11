@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 #import "CategoryViewController.h"
 #import "DatePickerViewController.h"
 
-@interface XpenseDetailsViewController : UITableViewController <CategoryViewControllerDelegate, DatePickerViewControllerProtocol>
+@interface XpenseDetailsViewController : UITableViewController <CategoryViewControllerDelegate, DatePickerViewControllerProtocol, UITextFieldDelegate>
 
-- (id)initWithNewXpense:(BOOL)isNew;
+- (id)initWithXpense:(NSManagedObjectID *)xpenseItemObjectID;
 
 @end
